@@ -26,12 +26,27 @@ class MyHomePage extends StatelessWidget {
         title: Text('practice'),
       ),
       body: Container(
-        color: Colors.red,
+        color: Colors.green,
         width: 100,
         height: 100,
         padding: const EdgeInsets.all(8.0),
         margin: const EdgeInsets.all(8.0),
       ),
+      bottomNavigationBar: BottomNavigationBar(items:[
+        BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+          title:Text('Home'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          title:Text('Profile'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.notifications),
+          title:Text('Alarm'),
+        ),
+
+      ]),
     );
   }
 }
