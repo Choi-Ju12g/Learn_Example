@@ -32,10 +32,17 @@ class MyHomePage extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         margin: const EdgeInsets.all(8.0),
       ),
-      bottomNavigationBar: BottomNavigationBar(items:[
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+
+          items:[
         BottomNavigationBarItem(
             icon: Icon(Icons.home),
           title:Text('Home'),
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.trending_up),
+          title:Text('Alarm'),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person),
