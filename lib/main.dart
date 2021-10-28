@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
+        primaryColor: Colors.red,
       ),
       home: MyHomePage(),
     );
@@ -26,14 +26,31 @@ class MyHomePage extends StatelessWidget {
         title: Text('Haksang Doctor'),
         centerTitle: true,
         elevation: 0.0,
-        leading: RaisedButton(
-          child:Text('LogIn'),
-          color: Colors.orange,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+
           onPressed: (){
-            
-            },
+
+          },
         ),
+
+        actions: <Widget>[
+          RaisedButton(
+            child:Text('LogIn'),
+            color: Colors.black12,
+            onPressed: (){
+            },
+          ),
+          RaisedButton(
+            child:Text('SignIn'),
+            color: Colors.purpleAccent[100],
+            onPressed: (){
+            },
+          )
+        ],
       ),
+
+
       body: Container(
         color: Colors.green,
         width: 100,
@@ -63,6 +80,7 @@ class MyHomePage extends StatelessWidget {
         ),
 
       ]),
+      backgroundColor: Colors.white,
     );
   }
 }
@@ -108,3 +126,10 @@ class MyHomePage extends StatelessWidget {
 //     );
 //   }
 // }
+
+final Map<int, Color> _whiteMap = {
+  50 : Color(0xFFFFFFFF),
+};
+
+final MaterialColor _whiteSwatch =
+    MaterialColor(Colors.white.value, _whiteMap);
