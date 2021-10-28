@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
         //primarySwatch: Colors.amber,
       ),
       home: MyHomePage(),
+      debugShowCheckedModeBanner: false
     );
   }
 }
@@ -46,18 +47,24 @@ class MyHomePage extends StatelessWidget {
 
         // 로그인 버튼, 회원가입 버튼
         actions: <Widget>[
-          RaisedButton(
-            child:Text('LogIn'),
-            color: Colors.black12,
-            onPressed: (){
-            },
+          ButtonTheme(
+            minWidth: 30.0,
+            height: 10.0,
+            child: RaisedButton(
+              child:Text('LogIn'),
+              color: Colors.black12,
+              onPressed: (){
+              },
+            ),
           ),
+
           RaisedButton(
             child:Text('SignIn'),
             color: Colors.purpleAccent[100],
             onPressed: (){
             },
           )
+
         ],
       ),
 
