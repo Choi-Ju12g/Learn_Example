@@ -4,14 +4,14 @@ import 'package:flutter/widgets.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  //const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Dc.학생',
       theme: ThemeData(
-        primaryColor: Colors.red,
+        //primarySwatch: Colors.amber,
       ),
       home: MyHomePage(),
     );
@@ -26,6 +26,16 @@ class MyHomePage extends StatelessWidget {
         title: Text('Haksang Doctor'),
         centerTitle: true,
         elevation: 0.0,
+        backgroundColor: Color(0x555555ff),
+        bottom: PreferredSize(
+          child: Container(
+            color:Colors.black12,
+            height: 1.0,
+          ),
+          preferredSize: Size.fromHeight(1.0),
+        ),
+
+        // 메뉴 버튼
         leading: IconButton(
           icon: Icon(Icons.menu),
 
@@ -34,6 +44,7 @@ class MyHomePage extends StatelessWidget {
           },
         ),
 
+        // 로그인 버튼, 회원가입 버튼
         actions: <Widget>[
           RaisedButton(
             child:Text('LogIn'),
