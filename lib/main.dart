@@ -50,11 +50,22 @@ class MyHomePage extends StatelessWidget {
           ButtonTheme(
             minWidth: 30.0,
             height: 10.0,
-            child: RaisedButton(
-              child:Text('LogIn'),
-              color: Colors.black12,
-              onPressed: (){
-              },
+            child: SizedBox(
+              width: 56,
+              height: 3,
+              child: RaisedButton(
+                child:Text('LogIn'),
+                color: Colors.black12,
+                onPressed: (){
+                },
+              ),
+               RaisedButton(
+                child: Text('SignIn'),
+                color: Colors.black,
+                onPressed: (){
+
+                },
+              )
             ),
           ),
 

@@ -43,7 +43,14 @@ class MyHomePage extends StatelessWidget {
               Container(color:Colors.black),
               Container(color:Colors.yellowAccent),
             ],
-          )
+          ),
     ));
+    Scaffold(
+      body: TextField(
+        decoration: InputDecoration(
+          labelText: "type here ID",
+        ),
+      ),
+    ),
   }
 }
