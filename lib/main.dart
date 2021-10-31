@@ -59,13 +59,7 @@ class MyHomePage extends StatelessWidget {
                 onPressed: (){
                 },
               ),
-               RaisedButton(
-                child: Text('SignIn'),
-                color: Colors.black,
-                onPressed: (){
 
-                },
-              )
             ),
           ),
 
