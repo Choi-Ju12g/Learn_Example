@@ -79,3 +79,35 @@ automaticallyImplyLeading: false, // hides leading widget
 flexibleSpace: SomeWidget(),
 )
 ),
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Welcome to Flutter'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          RaisedButton(onPressed: () {}, child: Text('RaisedButton')),
+          FlatButton(onPressed: () {}, child: Text('FlatButton')),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+              Text('(IconButton)'),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
+              Text('  (FloatingActionButton)'),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
