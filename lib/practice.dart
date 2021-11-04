@@ -1,113 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/serverinfo.dart';
+import 'package:flutter/serviceinfo.dart';
+import 'package:flutter/utils.dart';
 
-void main() => runApp(MyApp());
+class StartPage extends StatelessWidget {
+  StartPage({Key key, this.title, this.serverInfo}) : super(key: key);
 
-class MyApp extends StatelessWidget {
-  //const MyApp({Key? key}) : super(key: key);
+  final String title;
+  final Future<List<ServerInfo>> serverInfo;
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'practice',
-        theme: ThemeData(
-          primarySwatch: Colors.amber,
-        ),
-        //home: MyHomePage(),
-        home : homes()
-        debugShowCheckedModeBanner: false
-    );
-  }
-}
-
-class homes extends StatelessWidget {
-  const homes({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ;
-  }
-}
-
-
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return appBar: PreferredSize(
-    preferredSize: Size.fromHeight(100.0),
-    child: AppBar(
-    automaticallyImplyLeading: false, // hides leading widget
-    flexibleSpace: SomeWidget(),
-    )
-    ),
-
-
-    //   DefaultTabController(
-    //     length: 3,
-    //     child: Scaffold(
-    //       appBar:AppBar(
-    //         title:Text('tab'),
-    //         bottom:TabBar(
-    //           tabs: <Widget>[
-    //             Tab(icon:Icon(Icons.tag_faces)),
-    //             Tab(icon:Icon(Icons.hardware)),
-    //             Tab(icon:Icon(Icons.vertical_align_bottom_rounded)),
-    //           ],
-    //         ),
-    //       ),
-    //       body:TabBarView(
-    //         children: <Widget>[
-    //           Container(color:Colors.black12),
-    //           Container(color:Colors.black),
-    //           Container(color:Colors.yellowAccent),
-    //         ],
-    //       ),
-    //       DropDownbutton:
-    //     ),
-    // ));
-
-  }
-}
-
-appBar: PreferredSize(
-preferredSize: Size.fromHeight(100.0),
-child: AppBar(
-automaticallyImplyLeading: false, // hides leading widget
-flexibleSpace: SomeWidget(),
-)
-),
-
-class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Welcome to Flutter'),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          RaisedButton(onPressed: () {}, child: Text('RaisedButton')),
-          FlatButton(onPressed: () {}, child: Text('FlatButton')),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.add)),
-              Text('(IconButton)'),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
-              Text('  (FloatingActionButton)'),
-            ],
-          )
-        ],
-      ),
-    );
+        appBar: AppBar(
+          title: Text(title),
+        ),
+        body: Center(
+            child: FutureBuilder<List<ServerInfo>>(
+                future: this.serverInfo,
+                builder: (context, snapshot) {
+                  switch (snapshot.connectionState) {
+                    case ConnectionState.none:
+                    case ConnectionState.waiting:
+                      return CircularProgressIndicator();
+                    default:
+                      if (snapshot.hasError)
+                        return new Text('Error: ${snapshot.error}');
+                      else
+                        return _buildGridView(context, snapshot.data);
+                  }
+                })));
   }
-}
+
+  class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+  final wordPair = WordPair.random();  // DELETE
+
+  return MaterialApp(
+  title: 'Welcome to Flutter',
+  home: Scaffold(
+  appBar: AppBar(
+  title: Text('Welcome to Flutter'),
+  ),
+  body: Center(
+  //child: Text(wordPair.asPascalCase), // REPLACE with...
+  child: RandomWords(),                 // ...this line
+  ),
+  ),
+  );
+  }
+  }
