@@ -34,3 +34,5 @@ cal.abs(-4);
 
 const age = prompt("how old are you?");
 console.log(typeof "15", typeof parseInt("15")); 
+
+document.title =  "ja"
