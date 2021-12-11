@@ -1,25 +1,25 @@
 const cal = {
     add : function(a,b){
-        console.log(a+b);
+        return(a+b);
     },
     minus : function(a,b){
-        console.log(a-b);
+        return(a-b);
     },
     dot : function(a,b){
-        console.log(a*b);
+        return(a*b);
     },
     divide : function(a,b){
-        console.log(a/b);
+        return(a/b);
     },
 
     square: function(a,b){
-        console.log(a**b);
+        return(a**b);
     },
     abs : function(a){
         if (a > 0) {
-            console.log(a);
+            return(a);
         }else{
-            console.log(a*(-1));
+            return(a*(-1));
         }
     }
 };
@@ -31,3 +31,6 @@ cal.divide(3,2);
 cal.square(3,2);
 cal.abs(2);
 cal.abs(-4);
+
+const age = prompt("how old are you?");
+console.log(typeof "15", typeof parseInt("15")); 
