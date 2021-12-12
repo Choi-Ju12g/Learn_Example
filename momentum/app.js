@@ -37,7 +37,5 @@
 
 document.title =  "ja"
 //document.querySelector(#title);
-const title  = document.getElementById("title");
+const title  = document.querySelector("#title h1");
 console.dir(title);
-title.textContent = "hhh";
-title.innerText = "got you";
