@@ -41,3 +41,8 @@ const title  = document.querySelector("div #title");
 console.dir(title);
 
 title.style.color = "blue"; 
+
+function handleTitleClick(){
+    console.log("title was clicked");
+}
+title.addEventListener("click",handleTitleClick);
