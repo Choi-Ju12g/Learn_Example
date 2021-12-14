@@ -37,5 +37,7 @@
 
 document.title =  "ja"
 //document.querySelector(#title);
-const title  = document.querySelector("#title h1");
+const title  = document.querySelector("div #title");
 console.dir(title);
+
+title.style.color = "blue"; 
