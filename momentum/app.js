@@ -43,15 +43,15 @@ console.dir(title);
 title.style.color = "blue"; 
 
 function handleTitleClick(){
-    console.log("title was clicked");
+    title.style.color = "pink";
 }
 
 function handleMouseEnter(){
-    console.log("mouse is here!");
+    title.innerText = "mouse is here";
 }
 
 function handleMouseLeave(){
-    console.log("mouse is leaved!");
+    title.innerText = "mouse is leaved";
 }
 title.addEventListener("click",handleTitleClick);
 title.addEventListener("mouseenter",handleMouseEnter);
