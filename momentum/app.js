@@ -45,4 +45,14 @@ title.style.color = "blue";
 function handleTitleClick(){
     console.log("title was clicked");
 }
+
+function handleMouseEnter(){
+    console.log("mouse is here!");
+}
+
+function handleMouseLeave(){
+    console.log("mouse is leaved!");
+}
 title.addEventListener("click",handleTitleClick);
+title.addEventListener("mouseenter",handleMouseEnter);
+title.addEventListener("mouseleave",handleMouseLeave);
