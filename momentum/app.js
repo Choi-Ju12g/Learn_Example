@@ -37,22 +37,46 @@
 
 document.title =  "ja"
 //document.querySelector(#title);
-const title  = document.querySelector("div #title");
-console.dir(title);
+const h1  = document.querySelector("div #title");
+console.dir(h1);
 
-title.style.color = "blue"; 
+h1.style.color = "blue"; 
 
 function handleTitleClick(){
-    title.style.color = "pink";
+    h1.style.color = "pink";
 }
 
 function handleMouseEnter(){
-    title.innerText = "mouse is here";
+    h1.innerText = "mouse is here";
 }
 
 function handleMouseLeave(){
-    title.innerText = "mouse is leaved";
+    h1.innerText = "mouse is leaved";
 }
-title.addEventListener("click",handleTitleClick);
-title.addEventListener("mouseenter",handleMouseEnter);
-title.addEventListener("mouseleave",handleMouseLeave);
+
+h1.addEventListener("click",handleTitleClick);
+h1.addEventListener("mouseenter",handleMouseEnter);
+h1.addEventListener("mouseleave",handleMouseLeave);
+
+h1.onclick = handleTitleClick; // 가능 but 위 방식이 나중에 remove도 할 수 있어서 더 선호
+
+
+function handleWindowResize(){
+    document.body.style.background = "tomato";
+}
+
+function handleWindowCopy(){
+    alert("copier!");
+}
+
+function handleWindowOffline(){
+    alert("SOS no WIFI");
+}
+
+function handleWindowOnlie(){
+    alert("All good");
+}
+window.addEventListener("resize",handleWindowResize);
+window.addEventListener("copy",handleWindowCopy);
+window.addEventListener("offline",handleWindowOffline);
+window.addEventListener("offline",handleWindowOnlie);
