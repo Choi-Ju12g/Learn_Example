@@ -1,3 +1,23 @@
+const h1 = document.querySelector("div #title");
+
+function handleMouseEnter(){
+    const currentColor = h1.style.color;
+    let newColor;
+    if(currentColor === "blue"){
+        newColor = "tomato";
+    }else{
+        newColor = "blue";
+    }
+    h1.style.color = newColor;
+}
+
+h1.addEventListener("click",handleMouseEnter);
+
+
+
+
+
+
 // const cal = {
 //     add : function(a,b){
 //         return(a+b);
@@ -35,48 +55,48 @@
 // const age = prompt("how old are you?");
 // console.log(typeof "15", typeof parseInt("15")); 
 
-document.title =  "ja"
-//document.querySelector(#title);
-const h1  = document.querySelector("div #title");
-console.dir(h1);
+// document.title =  "ja"
+// document.querySelector(#title);
+// const h1  = document.querySelector("div #title");
+// console.dir(h1);
 
-h1.style.color = "blue"; 
+// h1.style.color = "blue"; 
 
-function handleTitleClick(){
-    h1.style.color = "pink";
-}
+// function handleTitleClick(){
+//     h1.style.color = "pink";
+// }
 
-function handleMouseEnter(){
-    h1.innerText = "mouse is here";
-}
+// function handleMouseEnter(){
+//     h1.innerText = "mouse is here";
+// }
 
-function handleMouseLeave(){
-    h1.innerText = "mouse is leaved";
-}
+// function handleMouseLeave(){
+//     h1.innerText = "mouse is leaved";
+// }
 
-h1.addEventListener("click",handleTitleClick);
-h1.addEventListener("mouseenter",handleMouseEnter);
-h1.addEventListener("mouseleave",handleMouseLeave);
+// h1.addEventListener("click",handleTitleClick);
+// h1.addEventListener("mouseenter",handleMouseEnter);
+// h1.addEventListener("mouseleave",handleMouseLeave);
 
-h1.onclick = handleTitleClick; // 가능 but 위 방식이 나중에 remove도 할 수 있어서 더 선호
+// h1.onclick = handleTitleClick; // 가능 but 위 방식이 나중에 remove도 할 수 있어서 더 선호
 
 
-function handleWindowResize(){
-    document.body.style.background = "tomato";
-}
+// function handleWindowResize(){
+//     document.body.style.background = "tomato";
+// }
 
-function handleWindowCopy(){
-    alert("copier!");
-}
+// function handleWindowCopy(){
+//     alert("copier!");
+// }
 
-function handleWindowOffline(){
-    alert("SOS no WIFI");
-}
+// function handleWindowOffline(){
+//     alert("SOS no WIFI");
+// }
 
-function handleWindowOnlie(){
-    alert("All good");
-}
-window.addEventListener("resize",handleWindowResize);
-window.addEventListener("copy",handleWindowCopy);
-window.addEventListener("offline",handleWindowOffline);
-window.addEventListener("offline",handleWindowOnlie);
+// function handleWindowOnlie(){
+//     alert("All good");
+// }
+// window.addEventListener("resize",handleWindowResize);
+// window.addEventListener("copy",handleWindowCopy);
+// window.addEventListener("offline",handleWindowOffline);
+// window.addEventListener("offline",handleWindowOnlie);
