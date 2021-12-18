@@ -1,6 +1,6 @@
 const h1 = document.querySelector("div #title");
 
-function handleMouseEnter(){
+function handleMouseEnterJS(){
     const currentColor = h1.style.color;
     let newColor;
     if(currentColor === "blue"){
@@ -11,7 +11,16 @@ function handleMouseEnter(){
     h1.style.color = newColor;
 }
 
-h1.addEventListener("click",handleMouseEnter);
+function handleMouseEnterCSS(){
+    const clickedClass = "active"
+    if(h1.className === clickedClass){
+        h1.className = "";
+    }else{
+        h1.className = clickedClass;
+    }
+}
+
+h1.addEventListener("click",handleMouseEnterCSS);
 
 
 
