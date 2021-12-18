@@ -1,4 +1,5 @@
-const h1 = document.querySelector("div #title");
+const h1 = document.querySelector(".title h1");
+console.log(h1);
 
 function handleMouseEnterJS(){
     const currentColor = h1.style.color;
@@ -20,7 +21,22 @@ function handleMouseEnterCSS(){
     }
 }
 
-h1.addEventListener("click",handleMouseEnterCSS);
+function handleMouseEnterCSS2(){
+    const clickedClass = "active"
+    if(h1.classList.contains(clickedClass)){
+        h1.classList.remove(clickedClass);
+    }else{
+        h1.classList.add(clickedClass);
+    }
+}
+
+function handleMouseEnterToggle(){
+    const toggleClass = "active";
+    h1.classList.toggle(toggleClass);
+}
+
+
+h1.addEventListener("click",handleMouseEnterToggle);
 
 
 
