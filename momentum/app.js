@@ -1,16 +1,7 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
 
-function onLoginBtnClick(){
-    const username = loginInput.value;
-    //console.log(loginInput.value);
-    if(username === ""){
-        console.log("Please write your name");
-    }else if(username.length > 15){
-        console.log("your name is too long. under 15 plz");
-    }
-}
+const link = document.querySelector("a");
 
 function onLoginSubmit(evenet){
     evenet.preventDefault();
@@ -18,6 +9,8 @@ function onLoginSubmit(evenet){
     console.log(loginInput.value);
 }
 
-loginButton.addEventListener("click",onLoginBtnClick);
+function handleLinkClikc(){
+    alert("clicked!");
+}
 loginForm.addEventListener("submit",onLoginSubmit);
-
+link.addEventListener("click",handleLinkClikc);
