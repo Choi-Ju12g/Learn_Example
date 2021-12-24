@@ -10,6 +10,7 @@ function onLoginSubmit(evenet){
 }
 
 function handleLinkClikc(event){
+    event.preventDefault();
     console.log(event);
     alert("clicked!");
 }
