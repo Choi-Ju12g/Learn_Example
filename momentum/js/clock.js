@@ -9,3 +9,4 @@ function getClock(){
 //setTimeout(sayHello, 5000);
 getClock();
 setInterval(getClock,1000);
+console.log("ha".padStart(19,"xdf"));
