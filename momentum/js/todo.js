@@ -12,15 +12,19 @@ function saveToDos(){
 
 function deleteTodo(){
     const target = this.parentElement;
-    //const target = event.target.parentElement; 로 해도 위와 동일 -> event 파라미터 필요
     target.remove();
+    //const target = event.target.parentElement; 로 해도 위와 동일 -> event 파라미터 필요
+    todos = todos.filter((toDo) => toDo.id !== parseInt(target.id));
+
+    saveToDos();
 }
 
 function panitToDo(newToDo){
     const li = document.createElement("li");
+    li.id = newToDo.id;
     const span = document.createElement("span");
+    span.innerText = newToDo.text;
     const button = document.createElement("button");
-    span.innerText = newToDo;
     button.innerText = "❌";
 
     button.addEventListener("click",deleteTodo);
@@ -34,8 +38,12 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";
-    todos.push(newTodo);
-    panitToDo(newTodo);
+    const newTodoObj = {
+        id : Date.now(),
+        text : newTodo,
+    };
+    todos.push(newTodoObj);
+    panitToDo(newTodoObj);
     saveToDos();
 }
 
