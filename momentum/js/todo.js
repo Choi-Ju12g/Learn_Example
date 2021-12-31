@@ -2,7 +2,7 @@ const toDoForm = document.querySelector("#todo-form");
 const toDolist = document.querySelector("#todo-list");
 const toDoInput = toDoForm.querySelector("input");
 
-const TODOS_KEY = "toods";
+const TODOS_KEY = "todos";
 
 let todos = [];
 
@@ -15,7 +15,6 @@ function deleteTodo(){
     target.remove();
     //const target = event.target.parentElement; 로 해도 위와 동일 -> event 파라미터 필요
     todos = todos.filter((toDo) => toDo.id !== parseInt(target.id));
-
     saveToDos();
 }
 
@@ -30,7 +29,6 @@ function panitToDo(newToDo){
     button.addEventListener("click",deleteTodo);
     li.appendChild(span);
     li.appendChild(button);
-
     toDolist.appendChild(li);
 }
 
@@ -50,7 +48,8 @@ function handleToDoSubmit(event){
 toDoForm.addEventListener("submit",handleToDoSubmit);
 
 const getSavedToDos = localStorage.getItem(TODOS_KEY);
-if(saveToDos !== null){
+
+if(getSavedToDos !== null){
     const parsedToDos = JSON.parse(getSavedToDos);
     todos = parsedToDos;
     parsedToDos.forEach(panitToDo);
