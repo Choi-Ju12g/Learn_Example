@@ -9,7 +9,8 @@
     <h1>Random Number Game</h1>
     
     <form>Generate a number between 0 and 
-      <input class="range-form" type="number" min="0" onkeypress="return numkeyCheck(event)"></input>
+      <input class="range-form" type="number" min="0"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"/>
     </form>
     <form> Guess the number : 
       <input class="input-form" type="number" min="0"></input>
