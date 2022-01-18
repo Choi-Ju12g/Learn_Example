@@ -19,9 +19,16 @@ function onClick(e) {
         `You chose: ${userInput.value}, the machine chose: ${randomNumber}.
         ${output}`;
     }
-    console.log(output);
+    console.log(typeof(range.value));
     console.log(result.innerText)
 }
 
+function numkeyCheck(e){
+    if(e.key >= 0 && e.key<= 9){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 playBtn.addEventListener("click", onClick);
