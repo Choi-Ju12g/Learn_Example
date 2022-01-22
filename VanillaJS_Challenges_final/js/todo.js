@@ -20,10 +20,13 @@ function deleteTodo(){
 
 function panitToDo(newToDo){
     const li = document.createElement("li");
+    li.classList.add("poster");
     li.id = newToDo.id;
     const span = document.createElement("span");
+    span.classList.add("poster-title");
     span.innerText = newToDo.text;
     const button = document.createElement("button");
+    button.classList.add("poster-remove");
     button.innerText = "❌";
 
     button.addEventListener("click",deleteTodo);

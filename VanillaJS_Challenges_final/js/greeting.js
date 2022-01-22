@@ -16,9 +16,9 @@ function onLoginSubmit(event){
 
 function paintGreetings(username){
     if(username ===''){
-        greeting.innerText = `???'s ToDo-List`;
+        greeting.innerText = `Hello ???`;
     }else{
-        greeting.innerText = `${username}' ToDo-List`;
+        greeting.innerText = `Hello ${username}`;
     }
 }
 
