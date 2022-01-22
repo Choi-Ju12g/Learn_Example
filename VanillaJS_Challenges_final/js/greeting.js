@@ -1,11 +1,10 @@
-const loginPage = document.querySelector("#login-page") //modal
+const loginPage = document.querySelector("#login-page");
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const greeting = document.querySelector("#greeting"); //name
+const greeting = document.querySelector("#greeting");
 const loginButton = document.querySelector(".login-btn");
-
 const USERNAME_KEY = "username";
-console.log(loginInput);
+
 function onLoginSubmit(event){
     event.preventDefault();
     loginPage.style.display = "none";
@@ -16,7 +15,7 @@ function onLoginSubmit(event){
 }
 
 function paintGreetings(username){
-    if(userName ===''){
+    if(username ===''){
         greeting.innerText = `???'s ToDo-List`;
     }else{
         greeting.innerText = `${username}' ToDo-List`;

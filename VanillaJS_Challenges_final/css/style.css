@@ -77,10 +77,10 @@ h1{
 #login-form{
     width: 400px;
     height: 400px;
-    background: rgba(255, 255,255,0.8);
+    background: rgba(255, 255, 255, 0.8);
     border: 2px solid rgba(0,0, 0, 0.8);
     position: relative;
-    border-radius: 50%;
+    border-radius: 10%;
     box-shadow: 17px 25px 45px rgba(0, 0, 0, 0.1);
 }
 
@@ -106,10 +106,11 @@ h1{
     outline: none;
     color: black;
     font-weight: 1000;
+    transition: 0.5s;
 }
 
-.login-input:visited{
-    transform: scale(1.2);
+.login-input:hover{
+    transform: scale(1.4);
     border-bottom: 2px solid #bd02f7;
 }
 
@@ -117,21 +118,19 @@ h1{
     position: absolute;
     width: 100px;
     height: 40px;
-    top: 300px;
+    top: 280px;
     left: 150px;
-    border-radius: 25px;
+    border-radius: 10%;
     border: 1px solid rgba(255, 255, 255, 0.8);
-    border-right: 1px solid rgba(255, 255, 255, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    background: rgba(255,255,255,0.2);
+    background: rgba(250, 71, 241, 0.2);
     font-size: 16px;
-    color: white;
-    transition: 0.4s;
+    color: black;
+    transition: 0.5s;
 }
 
 .login-btn:hover{
     transform: scale(1.2);
     color: #bd02f7;
     border: 1px solid rgba(255, 255, 255, 1);
-    background: rgba(255,255,255,0.8);
+    background: rgba(250,71,241,0.6);
 }

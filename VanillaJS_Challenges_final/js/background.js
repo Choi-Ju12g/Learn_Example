@@ -1,4 +1,3 @@
-const images = ["0.png","1.png","2.png"];
 const colors = [
     "#ef5777",
     "#575fcf",
@@ -20,13 +19,6 @@ const colors = [
     "#ff3f34"
   ];
 
-const chosenImage = images[Math.floor(Math.random()*images.length)];
-
-const bgImage = document.createElement("img");
-bgImage.src = `img/${chosenImage}`;
-
-//document.body.appendChild(bgImage);
-
 const button = document.querySelector("#changeBgBtn");
 const body = document.querySelector("body");
 function changeBackgroundColor(){
@@ -40,7 +32,6 @@ function changeBackgroundColor(){
     }
   }
   body.style.background = `linear-gradient(to right, ${colors[randomNumIndex[0]]},${colors[randomNumIndex[1]]})`;
-
 }
 
 changeBackgroundColor();
