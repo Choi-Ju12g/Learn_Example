@@ -1,30 +1,21 @@
+<!-- temlplate에는 1개의 html 속성이 와야한다. -->
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <!-- 컴포넌트 등록임-->
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    {{str}}
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  // 인스턴스 옵션 속성 or 컴포넌트 옵션 속성
-  name: 'App',
-  components: {
-    HelloWorld
+  // 여러 컴포넌트에서 하나의 데이터를 참조하지 않게 하기 위함
+  data: function(){
+    return{
+      str: 'hi'
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
