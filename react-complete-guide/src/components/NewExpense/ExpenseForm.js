@@ -5,16 +5,66 @@ function ExpenseForm() {
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
   
+  
+  const [userInput, setUserInput] = useState({
+    title: '',
+    amount: '',
+    date: ''
+  })
+
   const titleChangeHandler = (event) => {
+    // 방법 0. 개별 입력
     setEnteredTitle(event.target.value);
+    
+    // 방법 1. 수동 입력 
+    // setUserInput({
+    //   title: event.target.value,
+    //   amount: '',
+    //   date: ''
+    // })
+
+    // 방법 2. 스프레드 연산자
+    // setUserInput({
+    //   ...userInput,
+    //   title: event.target.value
+    // })
+
+    // 방법 1, 2의 문제점 : 이전 상태에 의존해야하며 매번 모든 값을 이전 상태를 복사해서 초기화한다 -> 별로
+    // ++ ) 많은 화면 업데이트가 일어나야 할 때, 더 예전 정보를 가져아ㅗ서 잘못 될 수 있다. 
+
+    //방법 3. prevState의 값이 react에 의해서 항상 가장 최신의 이전값임이 보장된다.
+    // setUserInput((prevState) => {
+      
+    //   return {...prevState, title: event.target.value};
+    // })
   };
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
+    
+    // setUserInput({
+    //   ...userInput,
+    //   amount: event.target.value
+    // })
+
+    // setUserInput((prevState) => {
+      
+    //   return {...prevState, amount: event.target.value};
+    // })
   };
   
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
+    
+    // setUserInput({
+    //   ...userInput,
+    //   date: event.target.value
+    // })
+
+    // setUserInput((prevState) => {
+      
+    //   return {...prevState, amount: event.target.value};
+    // })
   };
 
   return (
