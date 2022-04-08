@@ -10,20 +10,6 @@
 <body>
     <div class="container">
         <div class="poster">
-            
-    <div id="login-page">
-        <form class="login-input" id="login-form">
-            <p class="login-text">Enter your name please!</p>
-            <input
-            required maxlength="15"
-            type="text"
-            placeholder="what is your name?"   
-            />
-           
-        </form>
-        <input type="submit" class="login-btn" value="Log In"/>
-        
-        <h1 id="greeting" class="hidden"></h1>
             <form id="todo-form">
                 <input type="text" placeholder="Write your to do and press enter"/>
             </form>
@@ -42,6 +28,14 @@
         </div>       
     </div>
 
+    <div id="login-page">
+        <form id="login-form">
+          <p class="login-text">Enter your name please!</p>
+          <input class="login-input" required maxlength="15" type="text" placeholder="what is your name?"/>
+        </form>
+        <input type="submit" class="login-btn" value="Log In"/>
+
+        <h1 id="greeting" class="hidden"></h1>
     </div>
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
